@@ -8,7 +8,7 @@ FROM ubuntu:focal
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN set -eux; \
-	groupadd --gid 999 --system mongodb; \
+	groupadd --gid 1337 --system mongodb; \
 	useradd --uid 999 --system --gid mongodb --home-dir /data/db mongodb; \
 	mkdir -p /data/db /data/configdb; \
 	chown -R mongodb:mongodb /data/db /data/configdb

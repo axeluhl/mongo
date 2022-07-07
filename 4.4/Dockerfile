@@ -10,6 +10,7 @@ FROM ubuntu:focal
 RUN set -eux; \
 	groupadd --gid 1337 --system mongodb; \
 	useradd --uid 999 --system --gid mongodb --home-dir /data/db mongodb; \
+        adduser nobody mongodb; \
 	mkdir -p /data/db /data/configdb; \
 	chown -R mongodb:mongodb /data/db /data/configdb
 
